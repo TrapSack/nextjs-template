@@ -1,22 +1,26 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
+import NextNProgress from "nextjs-progressbar";
 import { Provider } from "react-redux";
-import { store } from "@/features/Redux/store";
-import theme from "@/config/styles/theme";
+import { ThemeProvider } from "styled-components";
+
 import GlobalStyles from "@/config/styles/global";
-import NextNProgress from 'nextjs-progressbar'
+import theme from "@/config/styles/theme";
+import { store, wrapper } from "@/features/Redux/store";
 
-
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+  console.log(store.getState());
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <NextNProgress color={theme.colors.lightBlue} options={{ showSpinner: false }} />
+        <NextNProgress
+          color={theme.colors.lightBlue}
+          options={{ showSpinner: false }}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </Provider>
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(App);
