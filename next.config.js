@@ -1,16 +1,13 @@
-
-
 /** @type {import('next').NextConfig} */
-let nextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
   images: {
-    domains: ['de-fsn1-2.stkcdn.com', 'localhost'],
-  }
-}
+    domains: ["de-fsn1-2.stkcdn.com", "localhost"],
+  },
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;
