@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
- const theme: DefaultTheme = {
+const theme: DefaultTheme = {
   breakpoints: {
     xs: "0px",
     xxl: "1400px",
@@ -190,5 +190,4 @@ import { DefaultTheme } from "styled-components";
 //   text: "#000",
 // };
 
-
-export default theme
+export default theme;
